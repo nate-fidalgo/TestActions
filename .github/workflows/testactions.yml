@@ -2,14 +2,28 @@
 
 name: MarketPlace Actions Test
 
+
+
 # Controls when the workflow will run
 on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+   inputs:
+      input_value:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+      enableFeatureX:
+        description: 'Enable feature X'
+        required: false
+        type: 'boolean'
+        default: 'false'
 
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
@@ -19,6 +33,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: nate-fidalgo/exampleaction@v1
+
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
