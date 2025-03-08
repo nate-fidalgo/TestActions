@@ -33,7 +33,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: nate-fidalgo/exampleaction@v1
-
+        with:
+            node-version: '18.16.0' 
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
