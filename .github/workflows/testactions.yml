@@ -38,8 +38,8 @@ jobs:
         with:
             input_value: '18.16.0'
 
-      - name: Use custom action output returned
-        run: echo "The output is ${{ steps.myaction.outputs.result }}"
+      - name: Use custom action output returnedsteps
+        run: echo "The output is ${{ steps.myaction.outputs.output_value }}"
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
